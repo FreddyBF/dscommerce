@@ -29,7 +29,7 @@ public class User {
 
     private String password;
 
-    List<Role> roles = new ArrayList<>();
+    List<Role> roleNames = new ArrayList<>();
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Order> orders = new ArrayList<>();

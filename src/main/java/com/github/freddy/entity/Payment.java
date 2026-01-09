@@ -1,8 +1,6 @@
 package com.github.freddy.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +18,13 @@ import java.util.UUID;
 public class Payment {
     private UUID id;
     private Instant paymentDate;
+
+    @OneToOne
+    @JoinColumn(
+            name = "order_id",
+            unique = true
+    )
+    Order order;
 
     @PrePersist
     public void prePersist() {

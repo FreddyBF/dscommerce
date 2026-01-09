@@ -37,6 +37,9 @@ public class Order { //Pedido do cliente
     @OneToMany(mappedBy = "id.order", cascade = CascadeType.ALL)
     private Set<OrderItem> items = new HashSet<>();
 
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    Payment payment;
+
     @PrePersist
     public void prePersist() {
         /*

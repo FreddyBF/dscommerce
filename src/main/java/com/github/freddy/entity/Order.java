@@ -24,7 +24,7 @@ public class Order { //Pedido do cliente
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant creationDate;
 
-    @Enumerated(EnumType.STRING)
+    @Convert(converter =  OrderStatusConverter.class)
     private OrderStatus status;
 
     @PrePersist

@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -30,6 +32,10 @@ public class Order { //Pedido do cliente
     @ManyToOne
     @JoinColumn(name = "client_id")
     private User client;
+
+
+    @OneToMany(mappedBy = "id.order", cascade = CascadeType.ALL)
+    private Set<OrderItem> items = new HashSet<>();
 
     @PrePersist
     public void prePersist() {

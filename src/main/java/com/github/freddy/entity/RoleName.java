@@ -1,6 +1,6 @@
 package com.github.freddy.entity;
 
-public enum Role {
+public enum RoleName {
     ROLE_CLIENT,
     ROLE_ADMIN
 }

@@ -1,9 +1,7 @@
 package com.github.freddy.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.UUID;
 
@@ -11,7 +9,8 @@ import java.util.UUID;
 @Table(name = "TB_USERS")
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class User {
 
     @Id

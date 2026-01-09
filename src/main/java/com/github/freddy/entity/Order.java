@@ -27,6 +27,10 @@ public class Order { //Pedido do cliente
     @Convert(converter =  OrderStatusConverter.class)
     private OrderStatus status;
 
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private User client;
+
     @PrePersist
     public void prePersist() {
         /*

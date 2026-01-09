@@ -28,6 +28,10 @@ public class User {
     private String phone;
 
     private String password;
+
     List<Role> roles = new ArrayList<>();
+
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Order> orders = new ArrayList<>();
 
 }

@@ -16,6 +16,8 @@ import java.util.UUID;
 @Getter
 @Setter
 public class Payment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private Instant paymentDate;
 

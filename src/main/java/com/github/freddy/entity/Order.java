@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
@@ -34,11 +35,19 @@ public class Order { //Pedido do cliente
     private User client;
 
 
-    @OneToMany(mappedBy = "id.order", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "id.order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<OrderItem> items = new HashSet<>();
 
-    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     Payment payment;
+
+    public BigDecimal getTotal() {
+        BigDecimal sum = BigDecimal.ZERO;
+        for (OrderItem item : items) {
+            sum = sum.add(item.getSubTotal());
+        }
+        return sum;
+    }
 
     @PrePersist
     public void prePersist() {

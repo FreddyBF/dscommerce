@@ -1,5 +1,6 @@
-package com.github.freddy.dtos;
+package com.github.freddy.dtos.product;
 
+import com.github.freddy.dtos.category.CategoryDTO;
 import com.github.freddy.entity.Product;
 
 import java.math.BigDecimal;
@@ -25,7 +26,10 @@ public record ProductOutputDTO(
                 product.getCategories() == null ? Set.of() :
                         product.getCategories()
                                 .stream()
-                                .map(cat -> new CategoryDTO(cat.getId(), cat.getName()))
+                                .map(cat -> new CategoryDTO(
+                                        cat.getId(),
+                                        cat.getName())
+                                )
                                 .collect(Collectors.toSet())
         );
     }

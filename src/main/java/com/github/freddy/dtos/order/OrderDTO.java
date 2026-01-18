@@ -1,4 +1,4 @@
-package com.github.freddy.dtos;
+package com.github.freddy.dtos.order;
 
 import com.github.freddy.entity.Order;
 
@@ -21,7 +21,7 @@ public record OrderDTO(
                 order.getId(),
                 order.getStatus().name().toLowerCase(),
                 order.getCreationDate()
-                        .atZone(ZoneId.of("GT+1"))
+                        .atZone(ZoneId.of("Africa/Luanda"))
                         .format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
                 order.getTotal(),
                 items

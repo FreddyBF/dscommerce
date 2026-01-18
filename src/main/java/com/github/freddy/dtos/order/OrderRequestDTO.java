@@ -1,4 +1,4 @@
-package com.github.freddy.dtos;
+package com.github.freddy.dtos.order;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -10,6 +10,12 @@ public record OrderRequestDTO(
         @NotNull(message = "")
         UUID userId,
         @NotEmpty(message = "")
-        List<OrderItemRequest> items
+        List<OrderItem> items
 ) {
+
+    public record OrderItem(
+            UUID productId,
+            Integer quantity
+    ) {
+    }
 }

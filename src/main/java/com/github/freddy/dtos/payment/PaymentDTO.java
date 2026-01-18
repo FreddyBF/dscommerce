@@ -1,4 +1,4 @@
-package com.github.freddy.dtos;
+package com.github.freddy.dtos.payment;
 
 import java.math.BigDecimal;
 import java.time.Instant;

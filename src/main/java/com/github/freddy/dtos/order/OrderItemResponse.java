@@ -1,4 +1,4 @@
-package com.github.freddy.dtos;
+package com.github.freddy.dtos.order;
 
 import com.github.freddy.entity.OrderItem;
 

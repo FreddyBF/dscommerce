@@ -1,12 +1,12 @@
-package com.github.freddy.dtos.user;
+package com.github.freddy.dtos.auth;
 
 import java.util.List;
 import java.util.UUID;
 
 public record LoginResponseDTO(
-        String accessToken,
-        String refreshToken,
-        String tokenType,
+        String access_token,
+        String refresh_token,
+        String token_type,
         UserSummaryDTO user
 ) {
     public LoginResponseDTO(String accessToken, String refreshToken, UserSummaryDTO user) {

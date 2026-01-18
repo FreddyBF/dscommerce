@@ -1,4 +1,9 @@
 package com.github.freddy.dtos.auth;
 
-public record RefreshTokenDTO() {
+import jakarta.validation.constraints.NotBlank;
+
+public record RefreshTokenDTO(
+        @NotBlank(message = "O Refresh Token é obrigatório")
+        String refreshToken
+) {
 }

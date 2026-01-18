@@ -1,4 +1,4 @@
-package com.github.freddy.dtos.user;
+package com.github.freddy.dtos.auth;
 
 import java.util.UUID;
 

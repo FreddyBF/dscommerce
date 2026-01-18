@@ -6,10 +6,10 @@ spring:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
 server:
-  port: ${SERVER_PORT:8080}
+  port: ${SERVER_PORT:8000}
 
 jwt:
-  secret: ${JWT_SECRET}
+  secret: ${JWT_SECRET:tu7crHR4UON64BQQtCeIvRnkaHcgzmLcp6CtwHel9ficDZ/z0rl7b0jLdjR3gFnndBoJAPcpKZ8CYS2FLVNUUA==}
 
   # Access Token
   access-token:
@@ -18,3 +18,7 @@ jwt:
   # Refresh Token
   refresh-token:
     expiration: ${JWT_REFRESH_TOKEN_EXPIRATION:604800000} # 7 dias (ms)
+
+#flyway:
+  #enabled: true
+  #baseline-on-migrate: true

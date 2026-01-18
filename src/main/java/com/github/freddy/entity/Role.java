@@ -21,11 +21,9 @@ public class Role {
     private UUID id;
 
     @Enumerated(EnumType.STRING)
-
     private RoleName authority;
 
     // O método do Spring Security agora converte o Enum para String
-    //@Override
     public String getAuthority() {
         return authority.name(); // .name() transforma "ROLE_ADMIN" em String
     }

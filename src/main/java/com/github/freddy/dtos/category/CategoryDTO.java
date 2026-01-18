@@ -1,4 +1,4 @@
-package com.github.freddy.dtos;
+package com.github.freddy.dtos.category;
 
 import com.github.freddy.entity.Category;
 

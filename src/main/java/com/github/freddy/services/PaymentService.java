@@ -5,6 +5,7 @@ import com.github.freddy.dtos.payment.PaymentDTO;
 import com.github.freddy.entity.Order;
 import com.github.freddy.entity.OrderStatus;
 import com.github.freddy.entity.Payment;
+import com.github.freddy.exceptions.ResourceNotFoundException;
 import com.github.freddy.repositories.OrderRepository;
 import com.github.freddy.repositories.PaymentRepository;
 import lombok.AllArgsConstructor;
@@ -23,7 +24,7 @@ public class PaymentService {
     public PaymentDTO payOrder(UUID orderId) {
         // Buscar pedido
         Order order = orderRepository.findById(orderId)
-                .orElseThrow(() -> new RuntimeException("Order not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Order not found"));
 
         // Verificar se já foi pago
         if (order.getStatus() == OrderStatus.PAID) {

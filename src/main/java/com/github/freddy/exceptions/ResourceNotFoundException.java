@@ -1,7 +1,7 @@
 package com.github.freddy.exceptions;
 
-public class EntityNotFoundException extends RuntimeException{
-    public EntityNotFoundException(String message) {
+public class ResourceNotFoundException extends RuntimeException{
+    public ResourceNotFoundException(String message) {
         super(message);
     }
 }
